@@ -4,13 +4,22 @@
 * API Documentation: http://help.themoviedb.org/kb/api/about-3
 * Documentation and usage in README file
 *
-* @pakage TMDB_V3_API_PHP
-* @author adangq <adangq@gmail.com>
-* @copyright 2012 adangq
-* @date 2012-02-12
-* @link http://www.github.com/adangq
+* @pakage TMDBPHP
+* @author Stefan Zidar <stefan.zidar@gmail.com>
+* @copyright 2012 Stefan Zidar
+* @date 2012-05-05
+* @link http://www.github.com/steffmeister
 * @version 0.0.1
 * @license BSD http://www.opensource.org/licenses/bsd-license.php
+*
+*
+* This code was forked from adangq: TMDB_V3_API_PHP
+* @copyright 2012 adangq
+* @license BSD http://www.opensource.org/licenses/bsd-license.php
+* @date 2012-02-12
+* @version 0.0.1
+* @author adangq <adangq@gmail.com>
+* @link http://www.github.com/adangq
 *
 *
 * Portions of this file are based on pieces of TMDb PHP API class - API 'themoviedb.org'
@@ -46,8 +55,7 @@
 
 
 ###########################
-$apikey="YOUR APIKEY";
-$tmdb_V3 = new TMDBv3($apikey);
+
 
 
 class TMDBv3{
@@ -180,13 +188,43 @@ class TMDBv3{
 		$movie= $this->_call($params,"");
 			return $movie;
 	}
+	
+	/**
+	* Latest Movie
+	* http://api.themoviedb.org/3/latest/movie?api_keyf
+	* @Param
+	*/
+	public function latestMovie() {
+		return $this->_call('latest/movie','');
+	}
+
+
+	/**
+	* Now Playing Movies
+	* http://api.themoviedb.org/3/movie/now-playing?api_keyf&language&page
+	* @Param integer $page
+	*/
+	public function nowPlayingMovies($page=1) {
+		return $this->_call('movie/now-playing', 'page='.$page);
+	}
+
+
+	/**
+	* Popular Movie List
+	* http://api.themoviedb.org/3/movie/popular?api_keyf&language&page
+	* @Param integer $page
+	*/
+	public function popularMovieList($page=1) {
+		return $this->_call('movie/popular', 'page='.$page);
+	}
+
 
 	/**
 	* Search Movie
 	* http://api.themoviedb.org/3/search/movie?api_keyf&language&query=future
 	* @param string  $peopleName
 	*/
-	public function searchMovie($movieTitle,$lang="en"){
+	public function searchMovie($movieTitle,$lang=$this->_lang){
 		$movieTitle="query=".urlencode($movieTitle);
 		return $this->_call("search/movie",$movieTitle,$lang);
 	}

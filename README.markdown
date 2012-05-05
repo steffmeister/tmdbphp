@@ -71,7 +71,7 @@
     ?>
 
 
-## GET IMAGE URL IN CONFIGUTATION API ##
+## GET IMAGE URL IN CONFIGURATION API ##
 	<?php
 		$imageURL= $tmdb_V3->getImageURL();
 
