@@ -8,9 +8,9 @@
 
 @pakage TMDBPHP
 
-@author Stefan Zidar <stefan.zidar@gmail.com>
+@author steffmeister <software@steffmeister.at>
 
-@copyright 2012 Stefan Zidar
+@copyright 2012 steffmeister
 
 @date 2012-05-05
 
@@ -19,6 +19,7 @@
 @version 0.0.1
 
 @license BSD http://www.opensource.org/licenses/bsd-license.php
+
 
 
 This code was forked from adangq: TMDB_V3_API_PHP
