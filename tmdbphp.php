@@ -296,7 +296,7 @@ class TMDBv3{
 	 * @param string $lang
 	 * @return void
 	 */
-	public function setLang($lang="es") {
+	public function setLang($lang="en") {
 		$this->_lang = $lang;
 	}
 

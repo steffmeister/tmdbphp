@@ -6,35 +6,21 @@
  
  Documentation and usage in README file
 
- @pakage TMDB_V3_API_PHP
- 
- @author adangq <adangq@gmail.com>
- 
- @copyright 2012 adangq
- 
- @date 2012-02-12
- 
- @link http://www.github.com/adangq
- 
- @version 0.0.1
- 
- @license BSD http://www.opensource.org/licenses/bsd-license.php
+@pakage TMDBPHP
+@author Stefan Zidar <stefan.zidar@gmail.com>
+@copyright 2012 Stefan Zidar
+@date 2012-05-05
+@link http://www.github.com/steffmeister
+@version 0.0.1
+@license BSD http://www.opensource.org/licenses/bsd-license.php
 
-
- Portions of this file are based on pieces of TMDb PHP API class - API 'themoviedb.org'
- 
- @Copyright Jonas De Smet - Glamorous | https://github.com/glamorous/TMDb-PHP-API
- 
- Licensed under BSD (http://www.opensource.org/licenses/bsd-license.php)
- 
- @date 10.12.2010
- 
- @version 0.9.10
- 
- @author Jonas De Smet - Glamorous
- 
- @link {https://github.com/glamorous/TMDb-PHP-API}
- 
+This code was forked from adangq: TMDB_V3_API_PHP
+@copyright 2012 adangq
+@license BSD http://www.opensource.org/licenses/bsd-license.php
+@date 2012-02-12
+@version 0.0.1
+@author adangq <adangq@gmail.com>
+@link http://www.github.com/adangq
 
 ## Requirements ##
 
@@ -47,7 +33,7 @@
 ### Initialize the class ###
 
     <?php
-	    include('tmdb_v3.php');
+	    include('tmdbphp.php');
 	    
 		//Insert your api key of TMDB    
 		$apikey="YOUR_APIKEY";
@@ -56,14 +42,20 @@
 
 	?>
 
-### Search a Movie ###
+### Set your desired language ###
+
+    <?php
+    	// eg, set to german, default is english
+		$tmdb_V3->setLang('de')	?>
+	?>
+
+### Search movie ###
 
     <?php
 		//Title to search for
 		$title = 'back to the future';
-		$language='es'
 
-		$searchTitle = $tmdb_V3->searchMovie('$title','$language');
+		$searchTitle = $tmdb_V3->searchMovie('$title');
 
 		// return array
 		echo"<pre>";print_r($searchTitle);echo"</pre>";
@@ -91,7 +83,7 @@
 		echo"<pre>";print_r($movieInfo);echo"</pre>";
 	?>
 
-## casts ##
+## Cast ##
 	<?php
 		$idMovie=11;
 		$movieCast = $tmdb_V3->movieCast($idMovie);
@@ -100,7 +92,7 @@
 		echo"<pre>";print_r($movieCast);echo"</pre>";
 	?>
 
-## images names ##
+## Images names ##
 	<?php
 		$idMovie=11;
 		$moviePoster = $tmdb_V3->moviePoster($idMovie);
@@ -109,7 +101,7 @@
 		echo"<pre>";print_r($moviePoster);echo"</pre>";
 	?>
 
-## trailers ##
+## Trailers ##
 	<?php
 		$idMovie=11;
 
@@ -119,7 +111,7 @@
 		echo"<pre>";print_r($movieTrailer);echo"</pre>";
 	?>
 
-## translations ##
+## Translations ##
 	<?php
 		$idMovie=11;
 
@@ -141,14 +133,14 @@
 
 ## Issues/Bugs ##
 
-We didn't find any bugs (yet). If you find one, please inform us with the issue tracker on [github](http://github.com/glamorous/TMDb-PHP-API/issues).
+We didn't find any bugs (yet). If you find one, please inform us with the issue tracker on [github](http://github.com/steffmeister/tmdbphp/issues).
 
 ## Changelog ##
 
 
 **TMDb 0.0.1**
 
-- This is the first version of the class without inline documentation or testing   
+- This is the first version of the fork
 
 ## TO DO ##
 
