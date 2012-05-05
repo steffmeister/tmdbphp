@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 </head>
 <?
-include("tmdb_v3.php");
+include("tmdbphp.php");
 
 
 $apikey="YOUR APIKEY";
@@ -19,13 +19,13 @@ echo"<pre>";var_dump( $tmdb_V3->getImageURL());echo"</pre>";
 
 # Buscar Pelicula
 echo "BUSCA PELICULA";
-$buscar = $tmdb_V3->searchMovie('back to the future','cl');
+$buscar = $tmdb_V3->searchMovie('back to the future');
 echo"<pre>";print_r($buscar);echo"</pre>";
 
 # Info de  Pelicula
 $idMovie=11;
 #Info
-echo "DETALLES DE PELICULA";
+echo "DETAILS";
 $pelinfo = $tmdb_V3->movieDetail($idMovie);
 echo"<pre>";print_r($pelinfo);echo"</pre>";
 
