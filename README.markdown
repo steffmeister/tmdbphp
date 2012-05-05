@@ -1,25 +1,38 @@
 ## CREDITS  ##
 
- TMDB API v3 PHP class - wrapper to API version 3 of 'themoviedb.org
+ TMDB API v3 PHP class - wrapper to API version 3 of 'themoviedb.org'
  
  API Documentation: http://help.themoviedb.org/kb/api/about-3
  
  Documentation and usage in README file
 
 @pakage TMDBPHP
+
 @author Stefan Zidar <stefan.zidar@gmail.com>
+
 @copyright 2012 Stefan Zidar
+
 @date 2012-05-05
+
 @link http://www.github.com/steffmeister
+
 @version 0.0.1
+
 @license BSD http://www.opensource.org/licenses/bsd-license.php
 
+
 This code was forked from adangq: TMDB_V3_API_PHP
+
 @copyright 2012 adangq
+
 @license BSD http://www.opensource.org/licenses/bsd-license.php
+
 @date 2012-02-12
+
 @version 0.0.1
+
 @author adangq <adangq@gmail.com>
+
 @link http://www.github.com/adangq
 
 ## Requirements ##
