@@ -93,11 +93,11 @@ class TMDBv3{
 	*/
 	private $_imgUrl;
 ###############################################################################################################
-    function  __construct($apikey) {
+    function  __construct($apikey, $lang='en') {
 		//Assign Api Key
         $this->setApikey($apikey);
 		//Setting Language
-        $this->setLang();
+        $this->setLang($lang);
 
 		//Get Configuration
 		$conf = $this->getConfig();
@@ -224,7 +224,8 @@ class TMDBv3{
 	* http://api.themoviedb.org/3/search/movie?api_keyf&language&query=future
 	* @param string  $peopleName
 	*/
-	public function searchMovie($movieTitle,$lang=$this->_lang){
+	public function searchMovie($movieTitle,$lang=''){
+		if ($lang == '') $lang = $this->_lang;
 		$movieTitle="query=".urlencode($movieTitle);
 		return $this->_call("search/movie",$movieTitle,$lang);
 	}
