@@ -101,7 +101,7 @@ class TMDBv3{
 
 		//Get Configuration
 		$conf = $this->getConfig();
-		if (empty($conf)){echo "Imposible leer configuracion, verifique que la llave de la API sea valida";exit;}
+		if (empty($conf)){echo "Unable to read configuration, invalid API key?";exit;}
 		//set Images URL contain in config
 		$this->setImageURL($conf);
     }
