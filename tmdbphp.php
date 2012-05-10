@@ -88,6 +88,7 @@ class TMDBv3{
 	 * @var string
 	 */
 	private $_lang;
+	
 	/**
 	* url of TMDB images
 	*/
@@ -101,7 +102,7 @@ class TMDBv3{
 
 		//Get Configuration
 		$conf = $this->getConfig();
-		if (empty($conf)){echo "Unable to read configuration, invalid API key?";exit;}
+		if (empty($conf)){echo "Imposible leer configuracion, verifique que la llave de la API sea valida";exit;}
 		//set Images URL contain in config
 		$this->setImageURL($conf);
     }
@@ -164,17 +165,17 @@ class TMDBv3{
 	}
 
 	/**
-	* Movie Info
-	* http://api.themoviedb.org/3/movie/$id
-	* @param array  movieInfo
+	* Movie Cast
+	* http://api.themoviedb.org/3/movie/$id/casts
+	* @param array  movieCast
 	*/
 	public function movieCast($idMovie)
 	{
 		$castingTmp = $this->movieInfo($idMovie,"casts",false);
-		foreach ($castingTmp['cast'] as $castArr){
+		/*foreach ($castingTmp['cast'] as $castArr){
 			$casting[]=$castArr['name']." - ".$castArr['character'];
-		}
-		return $casting;
+		}*/
+		return $castingTmp;
 	}
 
 	/**
@@ -324,8 +325,8 @@ class TMDBv3{
 	 *
 	 * @return string
 	 */
-	public function getImageURL() {
-		return $this->_imgUrl . "original";
+	public function getImageURL($size="original") {
+		return $this->_imgUrl . $size;
 	}
 
 }
