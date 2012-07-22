@@ -91,7 +91,7 @@ This code was forked from adangq: TMDB_V3_API_PHP
 		$idMovie=11;
 
 		#Info
-		$movieInfo = $tmdb_V3->movieDetail($idMovie);
+		$movieInfo = $tmdb_V3->movieInfo($idMovie);
 
 		// return array
 		echo"<pre>";print_r($movieInfo);echo"</pre>";
