@@ -107,6 +107,8 @@ class TMDBv3{
 		$this->setImageURL($conf);
     }
 
+
+
 	/**
 	* Movie Info
 	* http://api.themoviedb.org/3/movie/$id
@@ -194,7 +196,24 @@ class TMDBv3{
 	public function latestMovie() {
 		return $this->_call('latest/movie','');
 	}
-
+	
+	/**
+	* Person Info
+	* http://api.themoviedb.org/3/person/$id
+	* @Param
+	*/
+	public function personInfo($idPerson) {
+		return $this->_call('person','');
+	}
+	
+	/**
+	* Genre List
+	* http://api.themoviedb.org/3/genre/list
+	* @Param
+	*/
+	public function genreList() {
+		return $this->_call('genre/list','');
+	}
 
 	/**
 	* Now Playing Movies
