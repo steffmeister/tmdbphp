@@ -7,9 +7,9 @@
 
 require('tmdbphp.php');
 
-$tmdb_instance = new TMDbv3('YOUR API KEY HERE', 'en');
+$tmdb_instance = new TMDbv3('YOUR API KEY', 'en');
 
-echo '<a href="?page=search">searchMovie()</a> - <a href="?page=single">movieInfo() / movieDetail()</a> - <a href="?page=genres">Genres</a> - <a href="?page=latest">latestMovie()</a> - <a href="?page=nowplaying">nowPlayingMovies()</a> - <a href="?page=popular">popularMovieList()</a> - <a href="?page=config">getConfig()</a> - <a href="?page=moviecast">movieCast()</a> - <a href="?page=movieposter">moviePoster()</a> - <a href="?page=movieimages">movieImages()</a> - <a href="?page=imagetest">image test</a>';
+echo '<a href="?page=search">searchMovie()</a> - <a href="?page=single">movieInfo() / movieDetail()</a> - <a href="?page=genres">genreList()</a> - <a href="?page=latest">latestMovie()</a> - <a href="?page=nowplaying">nowPlayingMovies()</a> - <a href="?page=popular">popularMovieList()</a> - <a href="?page=config">getConfig()</a> - <a href="?page=moviecast">movieCast()</a> - <a href="?page=movieposter">moviePoster()</a> - <a href="?page=movieimages">movieImages()</a> - <a href="?page=imagetest">image test</a>';
 
 echo '<pre>';
 
@@ -22,7 +22,7 @@ if ($_GET['page'] == 'search') {
 } else if ($_GET['page'] == 'popular') {
 	print_r($tmdb_instance->popularMovieList(1));
 } else if ($_GET['page'] == 'genres') {
-	echo 'not in v3 yet';
+	print_r($tmdb_instance->genreList());
 } else if ($_GET['page'] == 'config') {
 	print_r($tmdb_instance->getConfig());
 } else if ($_GET['page'] == 'moviecast') {
