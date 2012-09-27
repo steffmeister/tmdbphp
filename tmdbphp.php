@@ -143,24 +143,12 @@ class TMDBv3{
 	* http://api.themoviedb.org/3/movie/$id
 	* @param array  movieInfo
 	*/
-	public function movieTrailer($idMovie)
+	public function movieTrailers($idMovie)
 	{
 		$trailer = $this->movieInfo($idMovie,"trailers",false);
-		// $trailer =$trailer['posters'];
 		return $trailer;
 	}
 
-	/**
-	* Movie Info
-	* http://api.themoviedb.org/3/movie/$id
-	* @param array  movieInfo
-	*/
-	public function moviePoster($idMovie)
-	{
-		$posters = $this->movieInfo($idMovie,"images",false);
-		$posters =$posters['posters'];
-		return $posters;
-	}
 
 	/**
 	* Movie Cast
@@ -189,12 +177,31 @@ class TMDBv3{
 	}
 	
 	/**
+	* Similar Movies
+	* http://api.themoviedb.org/3/movie/$id/similar_movies?api_keyf
+	* @Param
+	*/
+	public function similarMovies($id) {
+		return $this->_call('movie/'.$id.'/similar_movies','');
+	}
+
+	/**
+	* Movie Images
+	* http://api.themoviedb.org/3/movie/$id/images?api_keyf
+	* @Param
+	*/
+	public function movieImages($id) {
+		return $this->_call('movie/'.$id.'/images','');
+	}
+
+	
+	/**
 	* Latest Movie
 	* http://api.themoviedb.org/3/latest/movie?api_keyf
 	* @Param
 	*/
 	public function latestMovie() {
-		return $this->_call('latest/movie','');
+		return $this->_call('movie/latest','');
 	}
 	
 	/**
